@@ -1,0 +1,430 @@
+/*import google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+    background-color: #111;
+    color: #fff;
+}
+
+/*all similar content styling codes*/
+section{
+    padding: 100px;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .skills, .teams, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 50px;
+}
+.about .title {
+    position: relative;
+    text-align: left; /* Align the title to the left */
+    font-size: 45px; /* Increase the font size */
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #c84dc6; /* Change the title color to blue */
+}
+
+.about .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%; /* Adjust the left position to center the underline */
+    transform: translateX(-50%); /* Center the underline horizontally */
+    width: 100%; /* Full width underline */
+    height: 3px;
+    background: #c84dc6; /* Blue underline color */
+}
+
+.about .title::after {
+    position: absolute;
+    bottom: -8px;
+    left: 0; /* Adjust the left position to align with the text */
+    font-size: 20px;
+    color: #c84dc6;
+    padding: 0 5px;
+    background: #fff;
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: #c84dc6;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: #c84dc6;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #c84dc6;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #c84dc6;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* home section styling */
+.home{
+    display: flex;
+    background: url("images/bg.png") no-repeat center; /*IMAGE FOND*/
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: #c84dc6;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: #c84dc6;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #c84dc6;
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    color: #c84dc6;
+    background: none;
+}
+
+/* projet */
+.about .title::after{
+    content: ""; /*qui je suis*/
+}
+.about .about-content .left{
+    width: 50%;
+}
+.about .about-content .left img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 20px 20px 20px rgba(200, 77, 198, 0.7); /* Couleur de l'ombre en rose */
+
+}
+
+/* Modifiez la couleur et le style de l'ombre pour répondre à vos préférences */
+
+.about .about-content .right{
+    width: 50%;
+}
+.about .about-content .right h1{
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+.about .about-content .right li{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.about .about-content .right .text{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.about .about-content .right .text span{
+    color: #c84dc6;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: #111;
+    color:  #c84dc6;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 30px;
+    border-radius: 6px;
+    border: 2px solid #c84dc6;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: #111;
+    background: #c84dc6;
+}
+ul {
+    list-style-type: none;
+}
+
+/* Add arrow icons for each li in the ul */
+.about .about-content .right ul {
+    list-style-type: none;
+}
+
+.about .about-content .right ul li::before {
+    content: "\2192"; /* Right arrow character */
+    margin-right: 10px; /* Add spacing between the arrow and text */
+    color: #c84dc6; /* Arrow color (blue) */
+    font-size: 20px; /* Adjust the arrow size as desired */
+}
+
+.skills .skills-content a{
+    background: #c84dc6;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 2px solid #c84dc6;
+    transition: all 0.3s ease;
+}
+.background-section {
+    position: relative;
+    z-index: 1; /* Assurez-vous que la section a un z-index supérieur pour s'afficher au-dessus de l'arrière-plan */
+    background: transparent; /* Réglez l'arrière-plan de la section sur transparent */
+    margin: 0; /* Réinitialisez les marges */
+    padding: 0; /* Réinitialisez les rembourrages */
+}
+
+.background-section::before {
+    content: ""; /* Ajoutez le pseudo-élément */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Hauteur de 16 pixels ou la hauteur souhaitée */
+    z-index: -1; /* Assurez-vous que le pseudo-élément est en arrière-plan */
+    background: url("images/bg.png") no-repeat center; /* Utilisez le même arrière-plan que la section .home */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
